@@ -11,6 +11,19 @@ This particular Android project consists of the following modules:
 1. **data** - implements networking, domain and persistence models, converters and managers,
 2. **application** - produces executable Android application.
 
+## Firebase
+
+Before trying to compile this sample project, you need to configure Firebase application first.
+
+  > Remember you can add multiple sample apps to the same Firebase project. There is no need to create separate projects for each app.
+
+To add sample application to a Firebase project:
+
+- use the `applicationId` value specified in the `application/build.gradle` file of the application as the Android package name,
+- download generated `google-services.json` file and copy it to the `application` module base directory.
+
+  > Note that this file is not tracked by git, so remember you need to repeat the process in case if you will remove this project from your hard drive.
+
 ## Gradle properties
 
 Available options that can be configured in `gradle.properties` file:
