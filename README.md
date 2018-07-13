@@ -26,7 +26,7 @@ To add sample application to a Firebase project:
 
 ## Remote Parameters
 
-Available parameters that can be configures in `Firebase Console`:
+Available parameters that can be configured in `Firebase Console`:
 
   - `welcome_text` - a message that is visible on the splash screen view.
 
