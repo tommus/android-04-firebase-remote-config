@@ -2,21 +2,20 @@
 
 <resources>
 
-  <!-- region Theme - Windowed -->
+  <!-- region Theme -->
 
-  <style name="Sample.Theme" parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="colorPrimary">@color/colorPrimary</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="colorAccent">@color/colorAccent</item>
-  </style>
+  <style name="Sample.Theme" parent="Theme.AppCompat.Light.DarkActionBar"/>
 
   <!-- endregion -->
 
-  <!-- region Theme - Fullscreen -->
+  <!-- region Theme - Windowed -->
 
-  <style name="Sample.Theme.FullScreen" parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="windowActionBar">false</item>
-    <item name="windowNoTitle">true</item>
+  <style name="Sample.Theme.Windowed"/>
+
+  <style name="Sample.Theme.Windowed.Light">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
   </style>
 
   <!-- endregion -->
