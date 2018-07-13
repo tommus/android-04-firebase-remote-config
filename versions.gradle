@@ -1,0 +1,130 @@
+//region Dependencies
+
+def deps = [:]
+ext.deps = deps
+
+//region Versions
+
+def versions = [:]
+versions.android_gradle_plugin = "3.1.2"
+versions.butter_knife = "9.0.0-SNAPSHOT"
+versions.constraint = "1.1.2"
+versions.dagger = "2.16"
+versions.firebase_config = "16.0.0"
+versions.firebase_core = "16.0.1"
+versions.google_services = "4.0.1"
+versions.javax = "10.0-b28"
+versions.jraf_prefs = "1.2.2"
+versions.model_mapper = "2.1.0"
+versions.multidex = "1.0.3"
+versions.rx_android = "2.0.2"
+versions.rx_java = "2.1.16"
+versions.room = "1.1.1"
+versions.stetho = "1.5.0"
+versions.support = "27.1.1"
+versions.timber = "4.7.0"
+deps.versions = versions
+
+//endregion
+
+//region Build
+
+def build = [:]
+build.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+build.butterknife_plugin = "com.jakewharton:butterknife-gradle-plugin:$versions.butter_knife"
+build.google_services = "com.google.gms:google-services:$versions.google_services"
+deps.build = build
+
+def build_versions = [:]
+build_versions.compile_sdk = 27
+build_versions.min_sdk = 21
+build_versions.target_sdk = 27
+deps.build_versions = build_versions
+
+//endregion
+
+//region Dagger
+
+def dagger = [:]
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.processor = "com.google.dagger:dagger-android-processor:$versions.dagger"
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+deps.dagger = dagger
+
+//endregion
+
+//region Facebook
+
+def facebook = [:]
+facebook.stetho = "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+deps.facebook = facebook
+
+//endregion
+
+//region Firebase
+
+def firebase = [:]
+firebase.config = "com.google.firebase:firebase-config:$versions.firebase_config"
+firebase.core = "com.google.firebase:firebase-core:$versions.firebase_core"
+deps.firebase = firebase
+
+//endregion
+
+//region Room
+
+def room = [:]
+room.compiler = "android.arch.persistence.room:compiler:$versions.room"
+room.runtime = "android.arch.persistence.room:runtime:$versions.room"
+room.rxjava2 = "android.arch.persistence.room:rxjava2:$versions.room"
+deps.room = room
+
+//endregion
+
+//region Reactive extensions
+
+def rx = [:]
+rx.android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+rx.java = "io.reactivex.rxjava2:rxjava:$versions.rx_java"
+deps.rx = rx
+
+//endregion
+
+//region Support
+
+def support = [:]
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.constraint = "com.android.support.constraint:constraint-layout:$versions.constraint"
+support.design = "com.android.support:design:$versions.support"
+support.multidex = "com.android.support:multidex:$versions.multidex"
+deps.support = support
+
+//endregion
+
+//region Miscellaneous
+
+deps.butter_knife = "com.jakewharton:butterknife:$versions.butter_knife"
+deps.butter_knife_compiler = "com.jakewharton:butterknife-compiler:$versions.butter_knife"
+deps.javax = "org.glassfish:javax.annotation:$versions.javax"
+deps.jraf_prefs = "org.jraf:prefs:$versions.jraf_prefs"
+deps.jraf_prefs_compiler = "org.jraf:prefs-compiler:$versions.jraf_prefs"
+deps.model_mapper = "org.modelmapper:modelmapper:$versions.model_mapper"
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+
+//endregion
+
+//endregion
+
+//region Repositories
+
+static def addRepos(RepositoryHandler handler) {
+  handler.google()
+  handler.jcenter()
+  handler.mavenCentral()
+  handler.maven { url "https://jitpack.io" }
+  handler.maven { url "https://maven.fabric.io/public" }
+  handler.maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+ext.addRepos = this.&addRepos
+
+//endregion

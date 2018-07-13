@@ -1,0 +1,4 @@
+#region Debugging
+EnableBugTracker=true
+EnableDebugBridge=false
+#endregion

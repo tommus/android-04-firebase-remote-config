@@ -1,0 +1,112 @@
+//region Startup Plugins
+
+apply plugin: "com.android.application"
+
+//endregion
+
+//region Android
+
+android {
+
+  //region Compile
+
+  compileSdkVersion deps.build_versions.compile_sdk
+
+  //endregion
+
+  //region Default
+
+  defaultConfig {
+    minSdkVersion deps.build_versions.min_sdk
+    targetSdkVersion deps.build_versions.target_sdk
+    multiDexEnabled true
+    versionCode getVersionCode()
+    versionName getVersionName()
+    applicationId "co.windly.firebaseremoteconfigsample"
+  }
+
+  //endregion
+
+  //region Build Types
+
+  buildTypes {
+    debug {
+      minifyEnabled false
+      shrinkResources false
+      useProguard false
+    }
+    release {
+      minifyEnabled true
+      shrinkResources true
+      useProguard true
+      files { rootProject.file("settings/proguard").listFiles() }.each {
+        proguardFile it
+      }
+    }
+  }
+
+  buildTypes.each {
+    it.buildConfigField "Boolean", "ENABLE_BUG_TRACKER", EnableBugTracker
+    it.buildConfigField "Boolean", "ENABLE_DEBUG_BRIDGE", EnableDebugBridge
+  }
+
+  //endregion
+
+  //region Compile Options
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  //endregion
+}
+
+//endregion
+
+//region Dependencies
+
+dependencies {
+
+  //region Modules
+
+  implementation project(":data")
+
+  //endregion
+
+  //region Dex
+
+  implementation deps.support.multidex
+
+  //endregion
+
+  //region Ui
+
+  implementation deps.support.app_compat
+  implementation deps.support.design
+  implementation deps.support.constraint
+
+  //endregion
+
+  //region View injections
+
+  implementation deps.butter_knife
+  annotationProcessor deps.butter_knife_compiler
+
+  //endregion
+
+  //region Reactive extensions
+
+  implementation deps.rx.android
+  implementation deps.rx.java
+
+  //endregion
+}
+
+//endregion
+
+//region Finale Plugins
+
+//apply plugin: "com.google.gms.google-services"
+
+//endregion

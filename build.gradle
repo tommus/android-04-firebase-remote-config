@@ -1,0 +1,58 @@
+//region Build Script
+
+buildscript {
+
+  repositories {
+    apply from: "versions.gradle"
+    addRepos(repositories)
+  }
+  dependencies {
+    classpath deps.build.android_gradle_plugin
+    classpath deps.build.butterknife_plugin
+    classpath deps.build.google_services
+  }
+}
+
+//endregion
+
+//region All Projects
+
+allprojects {
+  repositories {
+    addRepos(repositories)
+  }
+}
+
+//endregion
+
+//region Tasks
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
+//endregion
+
+//region Versioning
+
+private static String getGitCommitsCount() {
+  def branch = getCurrentBranch()
+  def command = "git rev-list ${branch} --count"
+  def result = command.execute()
+  return result.text.trim()
+}
+
+@SuppressWarnings("GroovyUnusedDeclaration")
+static String getVersionCode() {
+  def count = getGitCommitsCount()
+  return (count == null || count.empty) ? 0 : count.toInteger()
+}
+
+@SuppressWarnings("GroovyUnusedDeclaration")
+static String getVersionName() {
+  def code = getVersionCode()
+  def date = getBuildDate()
+  return "${date} (${code})"
+}
+
+//endregion
