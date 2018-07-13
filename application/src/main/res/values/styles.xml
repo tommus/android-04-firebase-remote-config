@@ -8,4 +8,32 @@
 
   <!-- endregion -->
 
+  <!-- region Widget -->
+
+  <style name="Sample.Widget"/>
+
+  <!-- endregion -->
+
+  <!-- region TextView -->
+
+  <style name="Sample.Widget.TextView"/>
+
+  <style name="Sample.Widget.TextView.Light">
+    <item name="android:textAppearance">@style/TextAppearance.Font.ProximaNova.Light</item>
+  </style>
+
+  <style name="Sample.Widget.TextView.Regular">
+    <item name="android:textAppearance">@style/TextAppearance.Font.ProximaNova</item>
+  </style>
+
+  <style name="Sample.Widget.TextView.Semibold">
+    <item name="android:textAppearance">@style/TextAppearance.Font.ProximaNova.Semibold</item>
+  </style>
+
+  <style name="Sample.Widget.TextView.Bold">
+    <item name="android:textAppearance">@style/TextAppearance.Font.ProximaNova.Bold</item>
+  </style>
+
+  <!-- endregion -->
+
 </resources>

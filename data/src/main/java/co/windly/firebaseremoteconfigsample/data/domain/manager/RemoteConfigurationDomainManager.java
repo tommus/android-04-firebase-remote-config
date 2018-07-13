@@ -7,6 +7,7 @@ import co.windly.firebaseremoteconfigsample.data.network.module.RemoteConfigurat
 import co.windly.firebaseremoteconfigsample.data.persistence.PersistenceModule;
 import co.windly.firebaseremoteconfigsample.data.persistence.manager.RemoteConfigurationPersistenceManager;
 import io.reactivex.Completable;
+import io.reactivex.Flowable;
 import io.reactivex.annotations.NonNull;
 import javax.inject.Inject;
 
@@ -52,6 +53,11 @@ public class RemoteConfigurationDomainManager {
     return network
       .getWelcomeText()
       .flatMapCompletable(persistence::saveWelcomeText);
+  }
+
+  public Flowable<String> observeWelcomeText() {
+    return persistence
+      .loadWelcomeText();
   }
 
   //endregion

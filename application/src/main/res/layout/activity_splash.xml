@@ -23,4 +23,34 @@
 
   <!-- endregion -->
 
+  <!-- region Loading -->
+
+  <ProgressBar
+    android:id="@+id/loading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@+id/text"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+  <!-- endregion -->
+
+  <!-- region Text -->
+
+  <TextView
+    android:id="@+id/text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/blackAlpha90"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/loading"
+    tools:text="Hello there. Enjoy your day."
+    style="@style/Sample.Widget.TextView.Light"/>
+
+  <!-- endregion -->
+
 </android.support.constraint.ConstraintLayout>

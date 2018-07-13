@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <!-- region Appearance -->
+
+  <style name="TextAppearance.Font" parent="@android:style/TextAppearance"/>
+
+  <!-- endregion -->
+
+  <!-- region Proxima Nova -->
+
+  <style name="TextAppearance.Font.ProximaNova">
+    <item name="fontPath">fonts/ProximaNova-Regular.otf</item>
+  </style>
+
+  <style name="TextAppearance.Font.ProximaNova.Light">
+    <item name="fontPath">fonts/ProximaNova-Light.otf</item>
+  </style>
+
+  <style name="TextAppearance.Font.ProximaNova.Semibold">
+    <item name="fontPath">fonts/ProximaNova-Semibold.otf</item>
+  </style>
+
+  <style name="TextAppearance.Font.ProximaNova.Bold">
+    <item name="fontPath">fonts/ProximaNova-Bold.otf</item>
+  </style>
+
+  <!-- endregion -->
+
+</resources>

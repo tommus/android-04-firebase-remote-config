@@ -80,6 +80,12 @@ dependencies {
 
   //endregion
 
+  //region Miscellaneous
+
+  implementation deps.calligraphy
+
+  //endregion
+
   //region Ui
 
   implementation deps.support.app_compat

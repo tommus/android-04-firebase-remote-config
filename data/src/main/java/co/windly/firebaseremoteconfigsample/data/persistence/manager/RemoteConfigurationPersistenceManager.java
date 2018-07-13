@@ -2,6 +2,7 @@ package co.windly.firebaseremoteconfigsample.data.persistence.manager;
 
 import co.windly.firebaseremoteconfigsample.data.persistence.settings.RemoteConfigurationPrefs;
 import io.reactivex.Completable;
+import io.reactivex.Flowable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.annotations.SchedulerSupport;
 import io.reactivex.schedulers.Schedulers;
@@ -35,6 +36,13 @@ public class RemoteConfigurationPersistenceManager {
     return Completable.fromAction(
       () -> remoteConfiguration.edit().putWelcomeText(text).apply()
     ).subscribeOn(Schedulers.io());
+  }
+
+  public Flowable<String> loadWelcomeText() {
+    return Flowable.fromPublisher(publisher -> {
+      final String text = remoteConfiguration.getWelcomeText();
+      publisher.onNext(text);
+    });
   }
 
   //endregion

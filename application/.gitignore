@@ -1,1 +1,8 @@
+# Gradle files
 /build
+
+# Gradle properties
+gradle.properties
+
+# Google Services
+google-services.json

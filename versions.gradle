@@ -8,6 +8,7 @@ ext.deps = deps
 def versions = [:]
 versions.android_gradle_plugin = "3.1.2"
 versions.butter_knife = "9.0.0-SNAPSHOT"
+versions.calligraphy = "2.3.0"
 versions.constraint = "1.1.2"
 versions.dagger = "2.16"
 versions.firebase_config = "16.0.0"
@@ -104,6 +105,7 @@ deps.support = support
 
 deps.butter_knife = "com.jakewharton:butterknife:$versions.butter_knife"
 deps.butter_knife_compiler = "com.jakewharton:butterknife-compiler:$versions.butter_knife"
+deps.calligraphy = "uk.co.chrisjenx:calligraphy:$versions.calligraphy"
 deps.javax = "org.glassfish:javax.annotation:$versions.javax"
 deps.jraf_prefs = "org.jraf:prefs:$versions.jraf_prefs"
 deps.jraf_prefs_compiler = "org.jraf:prefs-compiler:$versions.jraf_prefs"

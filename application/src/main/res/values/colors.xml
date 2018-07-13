@@ -10,4 +10,12 @@
 
   <!-- endregion -->
 
+  <!-- region Black -->
+
+  <color name="black">#000000</color>
+  <color name="blackAlpha30">#4D000000</color>
+  <color name="blackAlpha90">#E6000000</color>
+
+  <!-- endregion -->
+
 </resources>
