@@ -18,7 +18,7 @@
 
     <!-- region Splash -->
 
-    <activity android:name=".presentation.SplashActivity">
+    <activity android:name=".presentation.splash.SplashActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
