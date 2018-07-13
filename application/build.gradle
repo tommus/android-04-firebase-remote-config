@@ -107,6 +107,6 @@ dependencies {
 
 //region Finale Plugins
 
-//apply plugin: "com.google.gms.google-services"
+apply plugin: "com.google.gms.google-services"
 
 //endregion

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<defaultsMap>
+
+  <!-- region Welcome Text -->
+
+  <entry>
+    <key>welcome_text</key>
+    <value>Hello there. Enjoy your day.</value>
+  </entry>
+
+  <!-- endregion -->
+
+</defaultsMap>

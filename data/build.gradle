@@ -74,6 +74,12 @@ dependencies {
 
   //endregion
 
+  //region Dependency Injection
+
+  annotationProcessor deps.dagger.compiler
+
+  //endregion
+
   //region Firebase
 
   implementation deps.firebase.config
