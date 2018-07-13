@@ -19,10 +19,24 @@ Before trying to compile this sample project, you need to configure Firebase app
 
 To add sample application to a Firebase project:
 
-- use the `applicationId` value specified in the `application/build.gradle` file of the application as the Android package name,
-- download generated `google-services.json` file and copy it to the `application` module base directory.
+  - use the `applicationId` value specified in the `application/build.gradle` file of the application as the Android package name,
+  - download generated `google-services.json` file and copy it to the `application` module base directory.
 
   > Note that this file is not tracked by git, so remember you need to repeat the process in case if you will remove this project from your hard drive.
+
+## Remote Parameters
+
+Available parameters that can be configures in `Firebase Console`:
+
+  - `welcome_text` - a message that is visible on the splash screen view.
+
+## Default Parameters
+
+In-app default values are set using an XML file.
+
+This file is a `remote_config_defaults.xml` file located in `data` module's `res/xml` directory.
+
+It allows you to use Remote Config for any default value you might want to override in the future, without the need to set all of those values in the `Firebase Console`. 
 
 ## Gradle properties
 
